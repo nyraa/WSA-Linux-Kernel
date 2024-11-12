@@ -42,7 +42,7 @@ jobs:
           make -j$(nproc) LLVM=1 KCONFIG_CONFIG=configs/wsa/config-wsa-5.10
           mv -f ./arch/x86/boot/bzImage ./arch/x86/boot/kernel
       - name: Upload artifact - x86_64 (Superuser)
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: WSA-Kernel-x86_64-Superuser
           path: './arch/x86/boot/kernel'
@@ -52,7 +52,7 @@ jobs:
           make -j$(nproc) LLVM=1 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- KCONFIG_CONFIG=configs/wsa/config-wsa-arm64-5.10
           mv -f ./arch/arm64/boot/Image ./arch/arm64/boot/kernel
       - name: Upload artifact - arm64 (Superuser)
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: WSA-Kernel-arm64-Superuser
           path: './arch/arm64/boot/kernel'
